@@ -157,8 +157,10 @@ tbody tr:hover {{
 # -------------------------------
 # LOAD MODELS
 # -------------------------------
-rf_model = pickle.load(open("rf_model.pkl", "rb"))
-bilstm_model = load_model("bilstm_model.h5")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+rf_model = pickle.load(open(os.path.join(BASE_DIR, "rf_model.pkl"), "rb"))
+bilstm_model = load_model(os.path.join(BASE_DIR, "bilstm_model.h5"))
 
 
 # -------------------------------
@@ -167,9 +169,9 @@ bilstm_model = load_model("bilstm_model.h5")
 rf_accuracy = 0.9985
   # replace with your actual RF accuracy
 bilstm_accuracy = 0.99  # replace with your BiLSTM accuracy
-scaler = pickle.load(open("scaler.pkl", "rb"))
-encoders = pickle.load(open("encoders.pkl", "rb"))
-label_encoder = pickle.load(open("label_encoder.pkl", "rb"))
+scaler = pickle.load(open(os.path.join(BASE_DIR, "scaler.pkl"), "rb"))
+encoders = pickle.load(open(os.path.join(BASE_DIR, "encoders.pkl"), "rb"))
+label_encoder = pickle.load(open(os.path.join(BASE_DIR, "label_encoder.pkl"), "rb"))
 
 
 
